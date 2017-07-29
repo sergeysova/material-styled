@@ -3,7 +3,10 @@
   "private": true,
   "description": "Material UI styled components",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bs": "lerna bootstrap",
+    "postinstall": "npm run bs",
+    "clean": "rimraf "
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/LestaD/material-styled/issues"
   },
-  "homepage": "https://github.com/LestaD/material-styled#readme"
+  "homepage": "https://github.com/LestaD/material-styled#readme",
+  "devDependencies": {
+    "lerna": "^2.0.0",
+    "rimraf": "^2.6.1"
+  }
 }
