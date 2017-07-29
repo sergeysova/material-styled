@@ -1,0 +1,27 @@
+{
+  "name": "material-styled",
+  "private": true,
+  "description": "Material UI styled components",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LestaD/material-styled.git"
+  },
+  "keywords": [
+    "material",
+    "ui",
+    "design",
+    "styled",
+    "ui",
+    "mui",
+    "react"
+  ],
+  "author": "Sergey Sova <i.am@lestad.net> (https://lestad.top)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LestaD/material-styled/issues"
+  },
+  "homepage": "https://github.com/LestaD/material-styled#readme"
+}
