@@ -1,26 +1,23 @@
 {
   "name": "material-styled",
+  "version": "0.0.0-lerna",
   "private": true,
   "description": "Material UI styled components",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test:lint": "eslint packages",
+    "build": "lerna run build",
+    "build:dev": "NODE_ENV=development npm run build",
+    "build:prod": "NODE_ENV=production npm run build",
     "bs": "lerna bootstrap",
     "postinstall": "npm run bs",
-    "clean": "rimraf "
+    "clean": "lerna run clean --scope \"@material-styled/*\"",
+    "publish": "lerna publish --scope \"@material-styled/*\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LestaD/material-styled.git"
   },
-  "keywords": [
-    "material",
-    "ui",
-    "design",
-    "styled",
-    "ui",
-    "mui",
-    "react"
-  ],
   "author": "Sergey Sova <i.am@lestad.net> (https://lestad.top)",
   "license": "MIT",
   "bugs": {
@@ -30,6 +27,11 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-plugin-styled-name": "^1.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "eslint": "^4.3.0",
     "eslint-config-atomix-react": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^5.1.1",

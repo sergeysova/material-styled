@@ -6,10 +6,34 @@
   "homepage": "https://material.react.design",
   "license": "MIT",
   "repository": "https://github.com/lestad/material-styled/tree/master/packages/paper",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel -d dist src",
+    "clean": "rimraf dist/* coverage/* .lcov-info/*"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "material",
+    "ui",
+    "design",
+    "styled",
+    "ui",
+    "mui",
+    "react"
+  ],
   "devDependencies": {
     "lerna": "^2.0.0",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "prop-types": "^15.5.10"
+    "react-dom": "^15.6.1"
+  },
+  "dependencies": {
+    "styled-components": "^2.1.1"
+  },
+  "peerDependencies": {
+    "react": "^15.6.1",
+    "styled-components": "^2.1.1"
   }
 }
