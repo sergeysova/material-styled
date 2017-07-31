@@ -1,0 +1,29 @@
+{
+  "name": "@material-styled/core",
+  "version": "0.0.1",
+  "description": "Core Material styled components",
+  "author": "Sergey Sova <i.am@lestad.net> (httsp://lestad.top)",
+  "homepage": "https://material.react.design",
+  "license": "MIT",
+  "repository": "https://github.com/lestad/material-styled/tree/master/packages/core",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel -d dist src",
+    "clean": "rimraf dist/*"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "material",
+    "ui",
+    "design",
+    "styled",
+    "ui",
+    "mui",
+    "react"
+  ],
+  "dependencies": {
+    "@material-styled/paper": "^0.1.0"
+  }
+}
