@@ -17,7 +17,7 @@ const shadows = {
 
 const Paper = styled.div`
   display: inline-block;
-  background-color: white;
+  background-color: ${p => p.color};
   box-shadow: ${p => shadows[p.z]};
   color: inherit;
 `
