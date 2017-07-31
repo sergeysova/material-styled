@@ -6,4 +6,5 @@ That is monorepo
 
 ## Development
 
-Commit with [commitizen](https://github.com/commitizen/cz-cli)
+Commit with [commitizen](https://github.com/commitizen/cz-cli)<br/>
+Use component name in PascalCase as $scope.<br/>
