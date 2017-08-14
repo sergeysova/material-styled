@@ -2,9 +2,9 @@ const { resolve } = require('path')
 const pify = require('pify')
 const { readFile } = pify(require('fs'))
 const Inquirer = require('inquirer')
+const ProgressBar = require('progress')
 const chalk = require('chalk')
 const changeCase = require('change-case')
-const progress = require('progress')
 const glob = pify(require('glob'))
 const mkdirp = pify(require('mkdirp'))
 
@@ -40,19 +40,39 @@ function packagesAsList(list) {
 
 
 async function createQuestions() {
+  const packages = await readPackages()
+  const listOfPackages = packagesAsList(packages)
+
+  const componentNameValidator = (value) => {
+    if (value.trim().length === 0) {
+      return 'Please, name a component'
+    }
+
+    if (listOfPackages.map(e => e.toLowerCase()).includes(value.toLowerCase())) {
+      return 'Component with that name already exists'
+    }
+
+    if (REJECTED_PACKAGES.map(e => e.toLowerCase()).includes(value.toLowerCase())) {
+      return 'Please, select another name for a component'
+    }
+
+    return true
+  }
+
   return [
     {
       name: 'componentName',
       type: 'input',
       message: 'Name of a new component:',
       filter: changeCase.pascalCase,
+      validate: componentNameValidator,
     },
     {
       name: 'baseComponentName',
       type: 'list',
       message: 'Select base component name:',
       default: BASE_PACKAGE,
-      choices: packagesAsList(await readPackages()),
+      choices: listOfPackages,
     },
     {
       name: 'appendTo',
@@ -76,12 +96,20 @@ async function findComponentFiles(baseName) {
   return list
 }
 
+const wait = () => new Promise(res => setTimeout(res, 500))
 
 async function copyComponentFiles(baseName, targetName, list) {
   const baseNamePath = changeCase.paramCase(baseName)
   const targetNamePath = changeCase.paramCase(targetName)
 
-  const contents = await Promise.all(list.map(file => readFile(file, 'utf8')))
+  const bar = new ProgressBar('Complete: :bar :current/:total', { total: 12, complete: '◾', incomplete: '◽' })
+
+  for (let a = 0; a < 12; a++) {
+    await wait()
+    bar.tick()
+  }
+
+  // const contents = await Promise.all(list.map(file => readFile(file, 'utf8')))
 }
 
 

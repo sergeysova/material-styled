@@ -6,5 +6,8 @@
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true
     }
+  },
+  "rules": {
+    "no-await-in-loop": "off"
   }
 }
