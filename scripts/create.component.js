@@ -1,6 +1,7 @@
-const { resolve } = require('path')
+const { resolve, dirname } = require('path')
 const pify = require('pify')
-const { readFile } = pify(require('fs'))
+const { readFile, writeFile } = pify(require('fs'))
+const debug = require('debug')('mst')
 const Inquirer = require('inquirer')
 const ProgressBar = require('progress')
 const chalk = require('chalk')
@@ -84,32 +85,40 @@ async function createQuestions() {
 }
 
 
-const processEach = (prev, curr) => (content) => {
-
-}
-
-
 async function findComponentFiles(baseName) {
   const baseNamePath = changeCase.paramCase(baseName)
 
-  const list = await glob(`packages/${baseNamePath}/**/*`, { ignore: ['**/node_modules/**', '**/dist/**'] })
+  const list = await glob(`packages/${baseNamePath}/**/*`, { ignore: ['**/node_modules/**', '**/dist/**'], nodir: true })
   return list
 }
 
-const wait = () => new Promise(res => setTimeout(res, 500))
 
-async function copyComponentFiles(baseName, targetName, list) {
+async function processComponentFiles(baseName, targetName, list) {
   const baseNamePath = changeCase.paramCase(baseName)
   const targetNamePath = changeCase.paramCase(targetName)
 
-  const bar = new ProgressBar('Complete: :bar :current/:total', { total: 12, complete: '◾', incomplete: '◽' })
+  const pkg = JSON.parse(await readFile(resolve(__dirname, '..', 'packages', baseNamePath, 'package.json')))
 
-  for (let a = 0; a < 12; a++) {
-    await wait()
+  const bar = new ProgressBar('Complete: :bar :current/:total', { total: list.length, complete: '◾', incomplete: '◽' })
+
+  for (let i = 0; i < list.length; i++) {
+    const basePath = resolve(__dirname, '..', list[i])
+    const targetPath = resolve(__dirname, '..', list[i].replace(baseNamePath, targetNamePath))
+    debug('Process file', basePath, '=>', targetPath)
+
+    const baseSource = await readFile(basePath, 'utf8')
+
+    const newSource = baseSource.toString()
+      .replace(pkg.description, `{Description for ${targetName}}`)
+      .replace(new RegExp(baseNamePath, 'g'), targetNamePath)
+      .replace(new RegExp(baseName, 'g'), targetName)
+      .replace(new RegExp(pkg.version, 'g'), '0.0.1')
+
+    await mkdirp(dirname(targetPath))
+    await writeFile(targetPath, newSource, { encoding: 'utf8' })
+
     bar.tick()
   }
-
-  // const contents = await Promise.all(list.map(file => readFile(file, 'utf8')))
 }
 
 
@@ -117,7 +126,9 @@ async function askForCreation(baseName, targetName, list) {
   const baseNamePath = changeCase.paramCase(baseName)
   const targetNamePath = changeCase.paramCase(targetName)
 
-  console.log('Files:', { baseNamePath, targetNamePath })
+  debug('Base name path:', baseNamePath, ':', baseName)
+  debug('Target name path:', targetNamePath, ':', targetName)
+  console.log('Files:')
 
   list.forEach((file) => {
     console.log('- ', chalk.green(file.replace(baseNamePath, targetNamePath)))
@@ -140,7 +151,7 @@ async function main() {
   const foundList = await findComponentFiles(options.baseComponentName)
 
   if (await askForCreation(options.baseComponentName, options.componentName, foundList)) {
-    await copyComponentFiles(options.baseComponentName, options.componentName, foundList)
+    await processComponentFiles(options.baseComponentName, options.componentName, foundList)
   }
   else {
     console.log(chalk.gray('Cancelled'))
@@ -148,4 +159,7 @@ async function main() {
 }
 
 
-main()
+main().catch((error) => {
+  console.log(chalk.red(error.message))
+  console.log(chalk.yellow(error.stack))
+})
