@@ -6,6 +6,7 @@
   "scripts": {
     "test": "npm run test:lint",
     "test:lint": "eslint packages",
+    "dev": "start-storybook -p 9001 -c .storybook",
     "build": "lerna run build",
     "build:dev": "NODE_ENV=development npm run build",
     "build:prod": "NODE_ENV=production npm run build",
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/LestaD/material-styled#readme",
   "devDependencies": {
+    "@storybook/react": "^3.2.4",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-plugin-styled-name": "^1.0.0",
@@ -48,6 +50,8 @@
     "mkdirp": "^0.5.1",
     "pify": "^3.0.0",
     "progress": "^2.0.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "rimraf": "^2.6.1",
     "semver": "^5.4.1"
   },

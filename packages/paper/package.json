@@ -7,6 +7,7 @@
   "license": "MIT",
   "repository": "https://github.com/lestad/material-styled/tree/master/packages/paper",
   "main": "dist/index.js",
+  "module": "src/index.js",
   "scripts": {
     "build": "babel -d dist src",
     "clean": "rimraf dist/* coverage/* .lcov-info/*"
