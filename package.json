@@ -4,7 +4,7 @@
   "private": true,
   "description": "Material UI styled components",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run test:lint",
     "test:lint": "eslint packages",
     "build": "lerna run build",
     "build:dev": "NODE_ENV=development npm run build",
