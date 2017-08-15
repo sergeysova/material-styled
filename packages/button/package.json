@@ -1,6 +1,6 @@
 {
   "name": "@material-styled/button",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Classic material Button for styled-components",
   "author": "Sergey Sova <i.am@lestad.net> (httsp://lestad.top)",
   "homepage": "https://material.react.design",
@@ -26,7 +26,7 @@
     "react"
   ],
   "dependencies": {
-    "@material-styled/paper": "^0.0.3"
+    "@material-styled/paper": "^0.0.4"
   },
   "devDependencies": {
     "prop-types": "^15.5.10",
