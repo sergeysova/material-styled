@@ -1,0 +1,41 @@
+{
+  "name": "@material-styled/button",
+  "version": "0.0.1",
+  "description": "Classic material Button for styled-components",
+  "author": "Sergey Sova <i.am@lestad.net> (httsp://lestad.top)",
+  "homepage": "https://material.react.design",
+  "license": "MIT",
+  "repository": "https://github.com/lestad/material-styled/tree/master/packages/button",
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "scripts": {
+    "build": "babel -d dist src",
+    "clean": "rimraf dist/* coverage/* .lcov-info/*"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "button",
+    "material",
+    "ui",
+    "design",
+    "styled",
+    "ui",
+    "mui",
+    "react"
+  ],
+  "dependencies": {
+    "@material-styled/paper": "^0.0.2"
+  },
+  "devDependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "styled-components": "^2.1.1"
+  },
+  "peerDependencies": {
+    "react": "^15.6.1",
+    "styled-components": "^2.1.1"
+  }
+}

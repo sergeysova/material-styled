@@ -25,6 +25,7 @@
     "react"
   ],
   "dependencies": {
-    "@material-styled/paper": "^0.0.2"
+    "@material-styled/paper": "^0.0.2",
+    "@material-styled/button": "^0.0.1"
   }
 }
