@@ -209,7 +209,8 @@ async function main() {
     await processComponentFiles(options.baseComponentName, options.componentName, foundList)
     await addToScopes(options.componentName, options.appendToScopes)
     console.log('\n', chalk.white.bold('Complete!'), '\n')
-    console.log('Now run', chalk.green('npm run bs'), 'to install dependencies\n')
+    console.log('Now run', chalk.green('npm run bs'), 'to install dependencies')
+    console.log('Then run', chalk.green('npm run build'), 'to build all components\n')
   }
   else {
     console.log(chalk.gray('Cancelled'))
