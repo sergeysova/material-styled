@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import Paper from './'
 
 
-storiesOf('Paper', module)
+storiesOf('core/Paper', module)
   .add('Without props', () => (
     <div style={{ padding: '30px' }}>
       <Paper>Default z=1</Paper>
