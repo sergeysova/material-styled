@@ -179,11 +179,11 @@ async function addToScopes(targetName, scopes) {
         const indexPath = resolve(__dirname, '..', 'packages', scope, 'src', 'index.js')
 
         const pkg = JSON.parse(await readFile(packagePath, 'utf8'))
-        const readme = await readFile(readmePath, 'utf8')
+        let readme = await readFile(readmePath, 'utf8')
         let index = await readFile(indexPath, 'utf8')
 
         pkg.dependencies[`@${LIBRARY_NAME}/${pathName}`] = `^${INITIAL_VERSION}`
-        index += `- ${targetName}\n`
+        readme += `- ${targetName}\n`
         index += `export ${targetName} from '@${LIBRARY_NAME}/${pathName}'\n`
 
         await writeFile(packagePath, JSON.stringify(pkg, 2, 2), { encoding: 'utf8' })
@@ -206,7 +206,7 @@ async function main() {
   const foundList = await findComponentFiles(options.baseComponentName)
 
   if (await askForCreation(options.baseComponentName, options.componentName, foundList)) {
-    // await processComponentFiles(options.baseComponentName, options.componentName, foundList)
+    await processComponentFiles(options.baseComponentName, options.componentName, foundList)
     await addToScopes(options.componentName, options.appendToScopes)
     console.log('\n', chalk.white.bold('Complete!'), '\n')
     console.log('Now run', chalk.green('npm run bs'), 'to install dependencies\n')
