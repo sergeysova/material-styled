@@ -13,6 +13,7 @@
     "bs": "lerna bootstrap",
     "postinstall": "npm run bs",
     "clean": "lerna run clean --scope \"@material-styled/*\"",
+    "prepublish": "npm run build",
     "publish": "lerna publish --scope \"@material-styled/*\"",
     "create": "node scripts/create.component"
   },
