@@ -1,11 +1,11 @@
 {
-  "name": "@material-styled/paper",
-  "version": "0.0.3",
-  "description": "Paper components present shadows and elevation",
+  "name": "@material-styled/theming",
+  "version": "0.0.1",
+  "description": "Themes shortcuts for material-styled",
   "author": "Sergey Sova <i.am@lestad.net> (httsp://lestad.top)",
   "homepage": "https://material.react.design",
   "license": "MIT",
-  "repository": "https://github.com/lestad/material-styled/tree/master/packages/paper",
+  "repository": "https://github.com/lestad/material-styled/tree/master/packages/theming",
   "main": "dist/index.js",
   "module": "src/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "dist"
   ],
   "keywords": [
-    "paper",
+    "theming",
     "material",
     "ui",
     "design",
@@ -25,9 +25,6 @@
     "mui",
     "react"
   ],
-  "dependencies": {
-    "@material-styled/theming": "^0.0.1"
-  },
   "devDependencies": {
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
@@ -35,7 +32,6 @@
     "styled-components": "^2.1.1"
   },
   "peerDependencies": {
-    "react": "^15.6.1",
     "styled-components": "^2.1.1"
   }
 }

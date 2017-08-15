@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
+import { palette } from '@material-styled/theming'
+
 
 export const shadows = {
   1: '0 0 2px 0 rgba(0,0,0,0.14), 0 2px 2px 0 rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20)',
@@ -17,19 +19,22 @@ export const shadows = {
 
 const Paper = styled.div`
   display: inline-block;
-  background-color: ${p => p.color};
+  background-color: ${palette('paper')};
   box-shadow: ${p => shadows[p.z]};
   color: inherit;
 `
 
 Paper.propTypes = {
   z: PropTypes.oneOf(Object.keys(shadows)),
-  color: PropTypes.string,
 }
 
 Paper.defaultProps = {
   z: 1,
-  color: 'white',
+  theme: {
+    palette: {
+      paper: ['white'],
+    },
+  },
 }
 
 export default Paper
