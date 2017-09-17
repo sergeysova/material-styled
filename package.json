@@ -54,6 +54,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "rimraf": "^2.6.1",
+    "semantic-release": "^8.0.0",
     "semver": "^5.4.1"
   },
   "config": {

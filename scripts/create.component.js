@@ -14,7 +14,7 @@ const mkdirp = pify(require('mkdirp'))
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-console */
 
-const REJECTED_PACKAGES = ['core', 'theming']
+const REJECTED_PACKAGES = ['core', 'theming', 'shadow']
 const AVAILABLE_BUNDLES = [{ name: 'core', checked: true }]
 const BASE_PACKAGE = 'Paper'
 const INITIAL_VERSION = '0.0.1'
