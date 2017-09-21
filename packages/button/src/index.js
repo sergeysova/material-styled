@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 
 
-import { shadows } from '@material-styled/paper'
+import { shadows } from '@material-styled/shadow'
 
 
 const ifProp = (name, styles) => props => props[name]

@@ -26,7 +26,8 @@
     "react"
   ],
   "dependencies": {
-    "@material-styled/paper": "^0.0.4"
+    "@material-styled/paper": "^0.0.4",
+    "@material-styled/shadow": "^0.0.0"
   },
   "devDependencies": {
     "prop-types": "^15.5.10",
