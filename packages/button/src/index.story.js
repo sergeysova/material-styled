@@ -6,17 +6,25 @@ import Button from './'
 
 storiesOf('core/Button', module)
   .add('Without props', () => (
-    <div style={{ padding: '30px', display: 'flex', flexFlow: 'row nowrap' }}>
-      <Button>Press</Button>
+    <div>
+      <Button>Simple button</Button>
     </div>
   ))
   .add('Disabled', () => (
-    <div style={{ padding: '30px', display: 'flex', flexFlow: 'row nowrap' }}>
-      <Button disabled>Flat</Button>
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <Button disabled>Disabled button</Button>
+      <Button>Original button</Button>
     </div>
   ))
   .add('Flat', () => (
-    <div style={{ padding: '30px', display: 'flex', flexFlow: 'row nowrap' }}>
-      <Button flat>Flat</Button>
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <Button flat>Flat button</Button>
+      <Button>Original button</Button>
+    </div>
+  ))
+  .add('Dense', () => (
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <Button dense>Dense button</Button>
+      <Button>Original button</Button>
     </div>
   ))

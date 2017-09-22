@@ -27,7 +27,8 @@
   ],
   "dependencies": {
     "@material-styled/paper": "^0.1.0",
-    "@material-styled/shadow": "^0.0.1"
+    "@material-styled/shadow": "^0.0.1",
+    "@material-styled/theming": "^0.0.2"
   },
   "devDependencies": {
     "prop-types": "^15.5.10",

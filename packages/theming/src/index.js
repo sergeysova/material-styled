@@ -6,3 +6,7 @@
  */
 export const palette = (name, shade = 0) => props =>
   props.theme.palette[name][shade]
+
+export const ifProp = (name, ifStyles, elseStyles = null) => props => props[name]
+  ? ifStyles
+  : elseStyles
