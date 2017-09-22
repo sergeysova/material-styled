@@ -7,8 +7,16 @@
     "react"
   ],
   "plugins": [
-    "styled-name",
     "transform-export-extensions",
-    "jsx-control-statements"
-  ]
+    "jsx-control-statements",
+    ["styled-components", {
+      "displayName": true,
+      "ssr": true
+    }]
+  ],
+  "env": {
+    "foo": {
+      "plugins": ["styled-name"]
+    }
+  }
 }
