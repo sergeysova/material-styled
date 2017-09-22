@@ -8,6 +8,7 @@
   ],
   "plugins": [
     "styled-name",
-    "transform-export-extensions"
+    "transform-export-extensions",
+    "jsx-control-statements"
   ]
 }

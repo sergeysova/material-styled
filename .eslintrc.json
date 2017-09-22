@@ -8,6 +8,10 @@
     }
   },
   "rules": {
-    "no-await-in-loop": "off"
+    "no-await-in-loop": "off",
+    "react/jsx-no-undef": ["error", { "allowGlobals": true }]
+  },
+  "globals": {
+    "If": true
   }
 }
