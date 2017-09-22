@@ -1,6 +1,6 @@
 {
   "name": "@material-styled/paper",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Paper components present shadows and elevation",
   "author": "Sergey Sova <i.am@lestad.net> (httsp://lestad.top)",
   "homepage": "https://material.react.design",
@@ -26,7 +26,7 @@
     "react"
   ],
   "dependencies": {
-    "@material-styled/shadow": "^0.0.1",
+    "@material-styled/shadow": "^0.1.0",
     "@material-styled/theming": "^0.0.3"
   },
   "devDependencies": {

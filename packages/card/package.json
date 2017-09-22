@@ -1,6 +1,6 @@
 {
   "name": "@material-styled/card",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "{Description for Card}",
   "author": "Sergey Sova <i.am@lestad.net> (httsp://lestad.top)",
   "homepage": "https://material.react.design",
@@ -26,9 +26,9 @@
     "react"
   ],
   "dependencies": {
-    "@material-styled/button": "^0.1.1",
-    "@material-styled/paper": "^0.1.1",
-    "@material-styled/shadow": "^0.0.1",
+    "@material-styled/button": "^0.1.2",
+    "@material-styled/paper": "^0.1.2",
+    "@material-styled/shadow": "^0.1.0",
     "@material-styled/theming": "^0.0.3"
   },
   "devDependencies": {

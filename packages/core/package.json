@@ -1,6 +1,6 @@
 {
   "name": "@material-styled/core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Core Material styled components",
   "author": "Sergey Sova <i.am@lestad.net> (httsp://lestad.top)",
   "homepage": "https://material.react.design",
@@ -25,8 +25,8 @@
     "react"
   ],
   "dependencies": {
-    "@material-styled/button": "^0.1.1",
-    "@material-styled/card": "^0.0.1",
-    "@material-styled/paper": "^0.1.1"
+    "@material-styled/button": "^0.1.2",
+    "@material-styled/card": "^0.0.2",
+    "@material-styled/paper": "^0.1.2"
   }
 }
