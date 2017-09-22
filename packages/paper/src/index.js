@@ -20,7 +20,7 @@ Paper.propTypes = {
 }
 
 Paper.defaultProps = {
-  z: 1,
+  z: '1',
   theme: {
     palette: {
       paper: ['white'],
