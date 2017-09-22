@@ -26,6 +26,7 @@
   ],
   "dependencies": {
     "@material-styled/button": "^0.1.0",
-    "@material-styled/paper": "^0.1.0"
+    "@material-styled/paper": "^0.1.0",
+    "@material-styled/card": "^0.0.0"
   }
 }
