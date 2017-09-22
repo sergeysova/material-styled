@@ -11,6 +11,7 @@ const Paper = styled.div`
   background-color: ${palette('paper')};
   box-shadow: ${p => shadows[p.z]};
   color: inherit;
+  will-change: box-shadow;
   transition: ${shadowTransition};
 `
 
