@@ -24,6 +24,9 @@
     "mui",
     "react"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@material-styled/button": "^0.1.3",
     "@material-styled/card": "^0.0.3",

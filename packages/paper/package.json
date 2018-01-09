@@ -25,6 +25,9 @@
     "mui",
     "react"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@material-styled/shadow": "^0.1.0",
     "@material-styled/theming": "^0.0.3"
