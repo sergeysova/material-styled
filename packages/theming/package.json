@@ -29,10 +29,10 @@
     "access": "public"
   },
   "devDependencies": {
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "styled-components": "^2.1.1"
+    "styled-components": "^2.4.0"
   },
   "peerDependencies": {
     "styled-components": "^2.1.1"
